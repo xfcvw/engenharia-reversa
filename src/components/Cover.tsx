@@ -20,8 +20,7 @@ export function Cover({ item, size = 'medium' }: CoverProps) {
 
   return (
     <div className={`cover cover--${size} ${item.type === 'artist' ? 'cover--round' : ''}`} style={style} aria-hidden="true">
-      <span>{initials}</span>
-      <i />
+      {item.artworkUrl ? <img src={item.artworkUrl} alt="" loading="lazy" /> : <><span>{initials}</span><i /></>}
     </div>
   )
 }

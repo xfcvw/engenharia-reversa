@@ -11,6 +11,9 @@ export interface MediaItem {
   accentEnd: string
   keywords: string[]
   popular?: boolean
+  artworkUrl?: string
+  previewUrl?: string
+  externalUrl?: string
 }
 
 export type SearchFilter = 'all' | MediaType
