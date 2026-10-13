@@ -8,11 +8,13 @@ Uma experiência de busca musical independente, inspirada nos padrões observáv
 - Ranking que privilegia título exato, prefixos, artista e palavras-chave.
 - Normalização de acentos e caixa para consultas em português.
 - Resultado principal, lista compacta de músicas e cartões por tipo.
-- Filtros, estados vazio/inicial, reprodução simulada e músicas curtidas.
+- Filtros, estados vazio/inicial, player completo e músicas curtidas.
+- Até 40 prévias públicas por busca, com capas e links para o catálogo de origem.
+- Catálogo local expandido com rap de anime, funk, trap, phonk, lo-fi, rock e eletrônica.
 - Atalho `/` para focar a busca e `Escape` para limpar.
 - Layout responsivo e suporte a movimento reduzido.
 
-Os dados são demonstrativos e locais. Nenhuma credencial ou API do Spotify é necessária.
+As buscas consultam a API pública do iTunes e usam faixas originais demonstrativas como contingência. Nenhuma credencial ou API do Spotify é necessária.
 
 ## Desenvolvimento
 

@@ -52,4 +52,15 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Sua coleção' })).toBeInTheDocument()
     expect(screen.getAllByText('Por Supuesto').length).toBeGreaterThan(0)
   })
+
+  it('abre as novas categorias com várias faixas do gênero', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(screen.getByRole('button', { name: 'Rap de anime' }))
+
+    expect(screen.getByRole('button', { name: 'Músicas' })).toHaveAttribute('aria-pressed', 'true')
+    expect(await screen.findByText('Modo Hokage')).toBeInTheDocument()
+    expect(screen.getByText('Respiração do Trovão')).toBeInTheDocument()
+    expect(screen.getByText('Rei dos Piratas')).toBeInTheDocument()
+  })
 })

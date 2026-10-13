@@ -1,5 +1,50 @@
 import type { MediaItem } from '../types'
 
+function demoTrack(id: string, title: string, artist: string, genre: string, accent: string, accentEnd: string, keywords: string[] = []): MediaItem {
+  return {
+    id: `demo-${id}`,
+    type: 'track',
+    title,
+    subtitle: artist,
+    meta: `${genre} · Pulse Originals`,
+    duration: '0:12',
+    accent,
+    accentEnd,
+    keywords: [genre, 'demo', 'original', ...keywords],
+  }
+}
+
+const expandedTracks: MediaItem[] = [
+  demoTrack('anime-1', 'Modo Hokage', 'Kira Flow', 'Rap de anime', '#db4d2f', '#ffb04d', ['anime rap', 'naruto', 'otaku', 'trap']),
+  demoTrack('anime-2', 'Respiração do Trovão', 'Hashira Beats', 'Rap de anime', '#e5a51c', '#fff06a', ['anime rap', 'kimetsu', 'demons', 'otaku']),
+  demoTrack('anime-3', 'Rei dos Piratas', 'Grand Line MC', 'Rap de anime', '#b5262e', '#f5c849', ['anime rap', 'one piece', 'piratas', 'otaku']),
+  demoTrack('anime-4', 'Instinto Superior', 'Saiyajin 7', 'Rap de anime', '#2364b4', '#d7ebff', ['anime rap', 'dragon ball', 'batalha', 'otaku']),
+  demoTrack('anime-5', 'Domínio Infinito', 'Feiticeiro Zero', 'Rap de anime', '#4e35a3', '#9c7cff', ['anime rap', 'jujutsu', 'feiticeiro', 'otaku']),
+  demoTrack('anime-6', 'Caçador de Sombras', 'Solo Beats', 'Rap de anime', '#252940', '#9b66ff', ['anime rap', 'solo leveling', 'herói', 'otaku']),
+  demoTrack('funk-1', 'Baile da Madrugada', 'DJ Aurora', 'Funk brasileiro', '#8b1ba8', '#ff5bd7', ['funk', 'funk carioca', 'baile', '150 bpm']),
+  demoTrack('funk-2', 'Grave no Talo', 'MC Vértice', 'Funk brasileiro', '#b51649', '#ff7459', ['funk', 'mandelão', 'automotivo', 'grave']),
+  demoTrack('funk-3', 'Passinho Neon', 'Tropa do Beat', 'Funk brasileiro', '#0e7f78', '#4df1cf', ['funk', 'passinho', 'dança', 'baile']),
+  demoTrack('funk-4', 'Sequência da Leste', 'DJ Circuito', 'Funk brasileiro', '#4932aa', '#a96fff', ['funk', 'mandelão', 'são paulo', 'ritmada']),
+  demoTrack('funk-5', 'Noite de Verão', 'MC Brisa', 'Funk brasileiro', '#cf3b60', '#ffa14f', ['funk', 'melody', 'verão', 'brasil']),
+  demoTrack('funk-6', 'Tamborzão 2000', 'Bonde Pulse', 'Funk brasileiro', '#186674', '#68d6ca', ['funk', 'tamborzão', 'old school', 'baile']),
+  demoTrack('trap-1', 'Diamante Roxo', 'Nilo 404', 'Trap nacional', '#542b8c', '#c97cff', ['trap', 'rap', 'nacional', '808']),
+  demoTrack('trap-2', 'Sem Freio', 'Distrito 011', 'Trap nacional', '#8b2e43', '#ff796e', ['trap', 'rap brasileiro', 'drill', 'rua']),
+  demoTrack('trap-3', 'Visão de Futuro', 'Lume MC', 'Trap nacional', '#294d8b', '#62b8e8', ['trap', 'rap', 'motivação', '808']),
+  demoTrack('trap-4', 'Depois das Três', 'Yara V', 'Trap nacional', '#5b315d', '#dc79bb', ['trap', 'r&b', 'noturno', 'brasil']),
+  demoTrack('phonk-1', 'Drift Fantasma', 'Nightshift 93', 'Phonk', '#632933', '#ef5a4f', ['phonk', 'drift', 'cowbell', 'dark']),
+  demoTrack('phonk-2', 'Neon Highway', 'KRVSH', 'Phonk', '#183f54', '#35c9d1', ['phonk', 'drift', 'carro', 'night']),
+  demoTrack('phonk-3', 'Ritual de Asfalto', 'Sombra FM', 'Brazilian phonk', '#704017', '#e7a834', ['phonk brasileiro', 'aggressive', 'bass', 'automotivo']),
+  demoTrack('phonk-4', 'Midnight Turbo', 'VXPER', 'Phonk', '#312966', '#8d79ff', ['phonk', 'speed', 'cowbell', 'gym']),
+  demoTrack('lofi-1', 'Chuva na Janela', 'Quarto 22', 'Lo-fi', '#315d6c', '#8cc7c2', ['lofi', 'chill', 'estudo', 'calmo']),
+  demoTrack('lofi-2', 'Página 47', 'Café Lunar', 'Lo-fi', '#735437', '#d9b478', ['lofi', 'foco', 'estudo', 'café']),
+  demoTrack('lofi-3', 'Cidade em Silêncio', 'AM Radio Club', 'Lo-fi', '#3e4d70', '#91a4d4', ['lofi', 'chillhop', 'relaxar', 'noturno']),
+  demoTrack('rock-1', 'Fora de Órbita', 'Satélite Zero', 'Rock nacional', '#8d2727', '#e98545', ['rock', 'guitarra', 'alternativo', 'brasil']),
+  demoTrack('rock-2', 'Último Amplificador', 'Quarto Vazio', 'Rock nacional', '#3e424b', '#a9aeb5', ['rock', 'indie rock', 'banda', 'guitarra']),
+  demoTrack('rock-3', 'Motor de Tempestade', 'Alta Voltagem', 'Rock', '#774014', '#dfb13a', ['rock', 'hard rock', 'energia', 'guitarra']),
+  demoTrack('eletronica-1', 'Pulso Digital', 'Neon Fields', 'Eletrônica', '#176b83', '#5ee1e6', ['eletrônica', 'edm', 'dance', 'festa']),
+  demoTrack('eletronica-2', 'Depois do Amanhã', 'Solar Arcade', 'Eletrônica', '#56378b', '#ef7ac8', ['eletrônica', 'synthwave', 'retro', 'dance']),
+]
+
 export const catalog: MediaItem[] = [
   { id: 't1', type: 'track', title: 'Horizonte Azul', subtitle: 'Marina Sena', meta: 'Vértice', duration: '3:24', accent: '#176f75', accentEnd: '#77d6bb', keywords: ['mpb', 'brasil', 'leve', 'verão'], popular: true },
   { id: 'a1', type: 'artist', title: 'Marina Sena', subtitle: 'Artista', meta: '2,8 mi ouvintes mensais', accent: '#f1553a', accentEnd: '#f3b879', keywords: ['mpb', 'pop', 'brasileira'], popular: true },
@@ -21,13 +66,24 @@ export const catalog: MediaItem[] = [
   { id: 'al3', type: 'album', title: 'CAJU', subtitle: 'Liniker', meta: 'Álbum · 2024', accent: '#693d2f', accentEnd: '#efab72', keywords: ['mpb', 'soul', 'álbum'], popular: true },
   { id: 't7', type: 'track', title: 'Oração ao Tempo', subtitle: 'Caetano Veloso', meta: 'Cinema Transcendental', duration: '3:28', accent: '#31524d', accentEnd: '#a3c783', keywords: ['mpb', 'clássico', 'brasil'] },
   { id: 'a4', type: 'artist', title: 'Caetano Veloso', subtitle: 'Artista', meta: '3,7 mi ouvintes mensais', accent: '#31524d', accentEnd: '#c8cf8d', keywords: ['mpb', 'tropicália', 'brasil'] },
+  ...expandedTracks,
+  { id: 'p5', type: 'playlist', title: 'Rap de Anime: Poder Máximo', subtitle: 'Pulse', meta: '36 faixas', accent: '#d63c32', accentEnd: '#ffc34e', keywords: ['rap de anime', 'anime rap', 'otaku', 'batalha'] },
+  { id: 'p6', type: 'playlist', title: 'Funk: Baile Sem Fim', subtitle: 'Pulse', meta: '50 faixas', accent: '#8b1ba8', accentEnd: '#ff5bd7', keywords: ['funk brasileiro', 'funk', 'baile', 'mandelão'] },
+  { id: 'p7', type: 'playlist', title: 'Trap Brasil 808', subtitle: 'Pulse', meta: '44 faixas', accent: '#542b8c', accentEnd: '#c97cff', keywords: ['trap nacional', 'trap', 'rap', '808'] },
+  { id: 'p8', type: 'playlist', title: 'Phonk para Acelerar', subtitle: 'Pulse', meta: '40 faixas', accent: '#632933', accentEnd: '#ef5a4f', keywords: ['phonk', 'drift', 'academia', 'grave'] },
 ]
 
 export const browseCategories = [
-  { name: 'Feito para você', accent: '#713cce', accentEnd: '#bd8cf4', term: 'populares' },
-  { name: 'Lançamentos', accent: '#db593b', accentEnd: '#ffad78', term: 'álbum' },
-  { name: 'Música brasileira', accent: '#18875d', accentEnd: '#57c990', term: 'brasil' },
-  { name: 'Podcasts', accent: '#3152a4', accentEnd: '#708de2', term: 'podcast' },
-  { name: 'Para relaxar', accent: '#8a6544', accentEnd: '#dcb878', term: 'calmo' },
-  { name: 'Indie', accent: '#9752ad', accentEnd: '#ed9adf', term: 'indie' },
+  { name: 'Rap de anime', accent: '#d63c32', accentEnd: '#ffc34e', term: 'rap de anime', type: 'track' as const },
+  { name: 'Funk brasileiro', accent: '#8b1ba8', accentEnd: '#ff5bd7', term: 'funk brasileiro', type: 'track' as const },
+  { name: 'Trap nacional', accent: '#542b8c', accentEnd: '#c97cff', term: 'trap nacional', type: 'track' as const },
+  { name: 'Phonk', accent: '#632933', accentEnd: '#ef5a4f', term: 'phonk', type: 'track' as const },
+  { name: 'Rap brasileiro', accent: '#94402b', accentEnd: '#e98d43', term: 'rap brasileiro', type: 'track' as const },
+  { name: 'Lo-fi & foco', accent: '#315d6c', accentEnd: '#8cc7c2', term: 'lofi', type: 'track' as const },
+  { name: 'Rock', accent: '#6f3025', accentEnd: '#d06f45', term: 'rock', type: 'track' as const },
+  { name: 'Eletrônica', accent: '#176b83', accentEnd: '#5ee1e6', term: 'eletrônica', type: 'track' as const },
+  { name: 'Música brasileira', accent: '#18875d', accentEnd: '#57c990', term: 'brasil', type: 'track' as const },
+  { name: 'Pop', accent: '#b83c67', accentEnd: '#f58daf', term: 'pop', type: 'track' as const },
+  { name: 'Para relaxar', accent: '#8a6544', accentEnd: '#dcb878', term: 'calmo', type: 'track' as const },
+  { name: 'Podcasts', accent: '#3152a4', accentEnd: '#708de2', term: 'podcast', type: 'podcast' as const },
 ]

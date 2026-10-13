@@ -37,4 +37,9 @@ describe('searchCatalog', () => {
   it('retorna uma lista vazia para consulta desconhecida', () => {
     expect(searchCatalog(catalog, 'zzzz-impossivel')).toEqual([])
   })
+
+  it('inclui uma seleção ampla de rap de anime e funk', () => {
+    expect(searchCatalog(catalog, 'rap de anime', 'track').length).toBeGreaterThanOrEqual(6)
+    expect(searchCatalog(catalog, 'funk brasileiro', 'track').length).toBeGreaterThanOrEqual(6)
+  })
 })

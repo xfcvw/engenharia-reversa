@@ -34,7 +34,7 @@ function formatDuration(milliseconds?: number) {
   return `${Math.floor(totalSeconds / 60)}:${String(totalSeconds % 60).padStart(2, '0')}`
 }
 
-export async function searchPublicMusic(query: string, signal?: AbortSignal, limit = 14): Promise<MediaItem[]> {
+export async function searchPublicMusic(query: string, signal?: AbortSignal, limit = 40): Promise<MediaItem[]> {
   const params = new URLSearchParams({
     term: query,
     media: 'music',
